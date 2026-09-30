@@ -232,8 +232,9 @@ Producto de persistencia E7:
 - E7: Pods, imágenes ECR, escalamiento, recuperación y persistencia.
 <img width="1363" height="542" alt="image" src="https://github.com/user-attachments/assets/24a5e737-b9ab-42d2-ad9e-7948ce09aa51" />
 
-## Información excluida del repositorio
 
+
+<img width="1732" height="960" alt="image" src="https://github.com/user-attachments/assets/08892db7-3369-4da2-96b0-a65ea90fc55e" />
 
 
 El portafolio incluye configuraciones de ejemplo; los valores reales
