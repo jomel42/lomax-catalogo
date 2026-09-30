@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lomax | Catálogo tecnológico</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <a class="marca" href="#/catalogo" aria-label="Lomax, inicio">
+      <span class="marca-icono">L</span>
+      <span>LOMAX<small>CATÁLOGO TECNOLÓGICO</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#/catalogo" id="nav-catalogo">Catálogo</a>
+      <a href="#/registro" id="nav-registro">Registrar producto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="aviso-global" class="aviso" role="status" hidden></div>
+
+    <section id="vista-catalogo">
+      <div class="encabezado">
+        <div>
+          <p class="etiqueta">EXPLORA LOMAX</p>
+          <h1>Tecnología para tu espacio.</h1>
+          <p class="subtitulo">Teclados, monitores y ratones. Consulta sus características y encuentra lo que necesitas.</p>
+        </div>
+        <a class="boton primario" href="#/registro">Registrar producto</a>
+      </div>
+
+      <div class="barra-catalogo">
+        <div class="buscador">
+          <label for="buscar">Buscar producto</label>
+          <input id="buscar" type="search" placeholder="Nombre o código">
+        </div>
+        <div>
+          <label for="filtro-categoria">Categoría</label>
+          <select id="filtro-categoria">
+            <option value="">Todas las categorías</option>
+          </select>
+        </div>
+        <button id="actualizar-catalogo" class="boton secundario" type="button">
+          Actualizar
+        </button>
+      </div>
+
+      <div class="resumen-catalogo">
+        <p id="conteo-catalogo" aria-live="polite">Cargando productos…</p>
+        <span class="insignia">Productos publicados</span>
+      </div>
+
+      <div id="catalogo-grid" class="catalogo-grid"></div>
+      <div id="catalogo-vacio" class="vacio" hidden>
+        <h2>No hay productos para mostrar</h2>
+        <p>Los productos aparecerán cuando su registro y fotografía estén completos.</p>
+      </div>
+    </section>
+
+    <section id="vista-registro" hidden>
+      <div class="encabezado">
+        <div>
+          <p class="etiqueta">AMPLÍA EL CATÁLOGO</p>
+          <h1>Registrar producto</h1>
+          <p class="subtitulo">Completa sus datos, características y fotografía para publicarlo.</p>
+        </div>
+        <a class="enlace" href="#/catalogo">Volver al catálogo</a>
+      </div>
+
+      <div class="registro-layout">
+        <form id="form-producto" class="panel">
+          <fieldset id="datos-producto">
+            <legend>01 · Información del producto</legend>
+            <div class="form-grid">
+              <div>
+                <label for="codigo">Código</label>
+                <input id="codigo" name="codigo" required maxlength="50"
+                  placeholder="Ej. TEC008">
+              </div>
+              <div>
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria_id" required>
+                  <option value="">Selecciona una categoría</option>
+                </select>
+              </div>
+              <div class="ancho-completo">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" required maxlength="150"
+                  placeholder="Nombre del producto">
+              </div>
+              <div>
+                <label for="precio">Precio</label>
+                <input id="precio" name="precio" type="number"
+                  min="0" max="9999999999.99" step="0.01" required
+                  placeholder="0.00">
+              </div>
+              <div class="ancho-completo">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" rows="4"
+                  required maxlength="5000"
+                  placeholder="Describe las características del producto"></textarea>
+              </div>
+            </div>
+
+            <div class="titulo-atributos">
+              <h2>02 · Características</h2>
+              <button id="agregar-atributo" class="boton secundario"
+                type="button">Añadir atributo</button>
+            </div>
+            <p class="ayuda">Agrega características como conexión, resolución, pulgadas o tipo.</p>
+            <div id="atributos"></div>
+          </fieldset>
+
+          <fieldset id="datos-imagen">
+            <legend>03 · Fotografía</legend>
+            <label for="imagen">Selecciona una imagen</label>
+            <input id="imagen" name="imagen" type="file"
+              accept="image/jpeg,image/png" required
+              aria-describedby="ayuda-imagen">
+            <p id="ayuda-imagen" class="ayuda">
+              JPEG o PNG de hasta 5 MB. La publicación requiere una imagen válida.
+            </p>
+          </fieldset>
+
+          <div id="estado-registro" class="aviso" role="status" hidden></div>
+
+          <div class="acciones">
+            <button id="guardar-producto" class="boton primario" type="submit">
+              Registrar y publicar
+            </button>
+            <button id="reintentar-registro" class="boton secundario"
+              type="button" hidden>Reintentar imagen guardada</button>
+            <button id="nuevo-registro" class="boton secundario"
+              type="button" hidden>Nuevo producto</button>
+          </div>
+
+          <div id="registro-identificador" class="identificador" hidden></div>
+          <a id="ver-producto-registrado" class="enlace" hidden>Ver detalle del producto</a>
+        </form>
+
+        <aside class="panel vista-previa">
+          <p class="etiqueta">VISTA PREVIA</p>
+          <div class="marco-imagen">
+            <img id="preview-imagen" alt="Vista previa de la fotografía" hidden>
+            <p id="preview-vacio">La fotografía aparecerá aquí</p>
+          </div>
+          <h2 id="preview-nombre">Tu próximo producto</h2>
+          <p class="ayuda">El producto se publicará después de verificar sus datos y procesar la fotografía.</p>
+          <ol class="pasos">
+            <li>Registrar datos y características</li>
+            <li>Cargar y procesar la fotografía</li>
+            <li>Publicar en el catálogo</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="vista-detalle" hidden>
+      <a class="enlace" href="#/catalogo">← Volver al catálogo</a>
+      <div id="detalle-contenido" class="detalle-contenido"></div>
+    </section>
+  </main>
+
+  <footer>LOMAX · Catálogo de productos tecnológicos</footer>
+
+  <template id="plantilla-atributo">
+    <div class="fila-atributo">
+      <input class="atributo-clave" aria-label="Nombre del atributo"
+        placeholder="Característica" maxlength="80" required>
+      <select class="atributo-tipo" aria-label="Tipo de atributo">
+        <option value="texto">Texto</option>
+        <option value="numero">Número</option>
+        <option value="booleano">Sí / No</option>
+      </select>
+      <input class="atributo-valor" aria-label="Valor del atributo"
+        placeholder="Valor" maxlength="500" required>
+      <button class="quitar-atributo boton secundario"
+        type="button" aria-label="Quitar atributo">Quitar</button>
+    </div>
+  </template>
+</body>
+</html>

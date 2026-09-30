@@ -1,0 +1,60 @@
+name: lomax
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: lomax-backend:1.0
+    env_file:
+      - ./backend/.env
+    environment:
+      PORT: "3000"
+      PGHOST: host.docker.internal
+      FLOCI_ENDPOINT: http://floci:4566
+    networks:
+      - aplicacion
+      - floci
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/categorias').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ./frontend
+    image: lomax-frontend:1.0
+    networks:
+      - aplicacion
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 5s
+
+  proxy:
+    build:
+      context: ./proxy
+    image: lomax-proxy:1.0
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+    networks:
+      - aplicacion
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+
+networks:
+  aplicacion:
+    driver: bridge
+  floci:
+    external: true
+    name: ${FLOCI_NETWORK}
