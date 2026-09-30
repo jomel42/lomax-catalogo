@@ -1,0 +1,52 @@
+﻿LOMAX - E6: DIRECCIONES Y CONECTIVIDAD
+
+Commit:
+b6d8f2eaf3886f20bab3f22ab6fd86b389706a35
+
+Etiqueta:
+entrega-b6d8f2e
+
+Registro desde Windows / Docker Desktop:
+localhost:4566
+
+Autenticacion:
+aws ecr get-login-password con endpoint http://localhost:4566
+y region us-east-1, enviado a docker login localhost:4566
+con usuario AWS y --password-stdin.
+Resultado guardado en autenticacion-docker.txt.
+
+Imagen frontend:
+localhost:4566/000000000000/us-east-1/lomax-frontend:entrega-b6d8f2e
+
+Imagen backend:
+localhost:4566/000000000000/us-east-1/lomax-backend:entrega-b6d8f2e
+
+Acceso desde contenedores:
+http://floci:4566
+Red Docker: rrhh-documentos_default.
+La prueba consulta los manifiestos y compara sus digest con ECR.
+
+Descarga:
+Se retiraron las referencias locales de entrega y se ejecuto docker pull.
+Docker pudo reutilizar capas compartidas; no fue un entorno sin cache.
+
+Ejecucion:
+compose.ecr.yaml selecciona las imagenes descargadas.
+El proxy expone frontend y API en http://localhost:8080.
+Las evidencias incluyen respuestas HTTP y verificacion de las imagenes
+utilizadas por los contenedores.
+
+KUBERNETES - CONFIGURACION A VERIFICAR EN LA ETAPA 7
+El nodo debe tener conectividad con FLOCI en la red Docker.
+localhost dentro del nodo no representa el equipo Windows.
+FLOCI documenta la generacion de un espejo de registro en:
+ /etc/rancher/k3s/registries.yaml
+mediante FLOCI_SERVICES_EKS_ECR_REGISTRY_MIRROR.
+
+Se verificara que el espejo incluya localhost:4566 y apunte
+al registro accesible desde el nodo.
+La descarga efectiva desde Kubernetes todavia no se ha probado.
+Se documentara con los eventos de los Pods y sus imageID.
+
+Referencia:
+https://floci.io/floci/services/eks/

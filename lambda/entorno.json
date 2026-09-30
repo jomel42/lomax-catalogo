@@ -1,0 +1,8 @@
+{
+  "Variables": {
+    "FLOCI_ENDPOINT": "http://floci:4566",
+    "BUCKET_ORIGINALES": "lomax-originales",
+    "BUCKET_MINIATURAS": "lomax-miniaturas",
+    "TABLA_PRODUCTOS": "ProductoDetalles"
+  }
+}

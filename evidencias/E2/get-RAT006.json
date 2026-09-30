@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "d7cfe8c8-f248-448a-93c9-6209dc71ef8c"
+        },
+        "codigo": {
+            "S": "RAT006"
+        },
+        "atributos": {
+            "M": {
+                "dpi": {
+                    "N": "16000"
+                },
+                "conexion": {
+                    "S": "USB"
+                },
+                "botones": {
+                    "N": "6"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

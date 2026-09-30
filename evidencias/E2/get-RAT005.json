@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "063ea391-92dd-4baf-a188-a09be63fca12"
+        },
+        "codigo": {
+            "S": "RAT005"
+        },
+        "atributos": {
+            "M": {
+                "dpi": {
+                    "N": "1600"
+                },
+                "conexion": {
+                    "S": "Bluetooth"
+                },
+                "botones": {
+                    "N": "3"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

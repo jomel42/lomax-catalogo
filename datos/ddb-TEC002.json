@@ -1,0 +1,35 @@
+{
+    "TableName":  "ProductoDetalles",
+    "ReturnValues":  "ALL_NEW",
+    "UpdateExpression":  "SET codigo = if_not_exists(codigo, :c), atributos = if_not_exists(atributos, :a), imagen_original_key = if_not_exists(imagen_original_key, :n), miniatura_key = if_not_exists(miniatura_key, :n), estado_procesamiento = if_not_exists(estado_procesamiento, :e)",
+    "ExpressionAttributeValues":  {
+                                      ":n":  {
+                                                 "NULL":  true
+                                             },
+                                      ":c":  {
+                                                 "S":  "TEC002"
+                                             },
+                                      ":e":  {
+                                                 "S":  "PENDIENTE"
+                                             },
+                                      ":a":  {
+                                                 "M":  {
+                                                           "distribucion":  {
+                                                                                "S":  "ES"
+                                                                            },
+                                                           "tipo":  {
+                                                                        "S":  "Membrana"
+                                                                    },
+                                                           "conexion":  {
+                                                                            "S":  "USB"
+                                                                        }
+                                                       }
+                                             }
+                                  },
+    "Key":  {
+                "producto_id":  {
+                                    "S":  "3ce2fdfd-8943-4b93-8434-dfd95dee0495"
+                                }
+            },
+    "ConditionExpression":  "attribute_not_exists(producto_id) OR codigo = :c"
+}

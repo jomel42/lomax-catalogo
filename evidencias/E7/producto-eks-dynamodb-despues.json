@@ -1,0 +1,32 @@
+﻿{
+    "Item": {
+        "producto_id": {
+            "S": "e3b95f7c-037e-4bfc-8f62-df80c0909f3b"
+        },
+        "codigo": {
+            "S": "TEC-EKS-001"
+        },
+        "atributos": {
+            "M": {
+                "conexion": {
+                    "S": "USB"
+                },
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Mecanico"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "S": "originales/e3b95f7c-037e-4bfc-8f62-df80c0909f3b/18ee0fea2ddfb306a4b3a2ff45db7145c60ff1e678038c801e36a67879bdbfae.png"
+        },
+        "estado_procesamiento": {
+            "S": "LISTA"
+        },
+        "miniatura_key": {
+            "S": "miniaturas/e3b95f7c-037e-4bfc-8f62-df80c0909f3b/36df6f366f96e69edd2e6693891876bc7e916a6a83babd2c588251358ac5140d.png"
+        }
+    }
+}

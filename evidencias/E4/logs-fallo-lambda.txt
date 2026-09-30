@@ -1,0 +1,8 @@
+﻿API Lomax disponible en http://localhost:3000
+docker : [invocar_lambda] Function not found: lomax-funcion-inexistente-e4
+En línea: 1 Carácter: 1
++ docker logs lomax-backend-prueba-fallo 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([invocar_lambda...-inexistente-e4:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

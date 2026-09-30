@@ -1,0 +1,4 @@
+entrega-b6d8f2e: Pulling from 000000000000/us-east-1/lomax-backend
+Digest: sha256:80d92836e3994f45f85ce377dd969d89a7c6c231dc4f867a47f7c1672c673eb5
+Status: Downloaded newer image for localhost:4566/000000000000/us-east-1/lomax-backend:entrega-b6d8f2e
+localhost:4566/000000000000/us-east-1/lomax-backend:entrega-b6d8f2e

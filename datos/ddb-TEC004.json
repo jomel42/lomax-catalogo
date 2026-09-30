@@ -1,0 +1,35 @@
+{
+    "TableName":  "ProductoDetalles",
+    "ReturnValues":  "ALL_NEW",
+    "UpdateExpression":  "SET codigo = if_not_exists(codigo, :c), atributos = if_not_exists(atributos, :a), imagen_original_key = if_not_exists(imagen_original_key, :n), miniatura_key = if_not_exists(miniatura_key, :n), estado_procesamiento = if_not_exists(estado_procesamiento, :e)",
+    "ExpressionAttributeValues":  {
+                                      ":n":  {
+                                                 "NULL":  true
+                                             },
+                                      ":c":  {
+                                                 "S":  "TEC004"
+                                             },
+                                      ":e":  {
+                                                 "S":  "PENDIENTE"
+                                             },
+                                      ":a":  {
+                                                 "M":  {
+                                                           "distribucion":  {
+                                                                                "S":  "US"
+                                                                            },
+                                                           "tipo":  {
+                                                                        "S":  "Mecanico 60%"
+                                                                    },
+                                                           "conexion":  {
+                                                                            "S":  "USB"
+                                                                        }
+                                                       }
+                                             }
+                                  },
+    "Key":  {
+                "producto_id":  {
+                                    "S":  "9c3e011d-a4ce-4b93-9d03-ba48bfca9943"
+                                }
+            },
+    "ConditionExpression":  "attribute_not_exists(producto_id) OR codigo = :c"
+}

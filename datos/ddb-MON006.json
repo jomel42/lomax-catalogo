@@ -1,0 +1,35 @@
+{
+    "TableName":  "ProductoDetalles",
+    "ReturnValues":  "ALL_NEW",
+    "UpdateExpression":  "SET codigo = if_not_exists(codigo, :c), atributos = if_not_exists(atributos, :a), imagen_original_key = if_not_exists(imagen_original_key, :n), miniatura_key = if_not_exists(miniatura_key, :n), estado_procesamiento = if_not_exists(estado_procesamiento, :e)",
+    "ExpressionAttributeValues":  {
+                                      ":n":  {
+                                                 "NULL":  true
+                                             },
+                                      ":c":  {
+                                                 "S":  "MON006"
+                                             },
+                                      ":e":  {
+                                                 "S":  "PENDIENTE"
+                                             },
+                                      ":a":  {
+                                                 "M":  {
+                                                           "frecuencia_hz":  {
+                                                                                 "N":  "144"
+                                                                             },
+                                                           "resolucion":  {
+                                                                              "S":  "3440x1440"
+                                                                          },
+                                                           "pulgadas":  {
+                                                                            "N":  "34"
+                                                                        }
+                                                       }
+                                             }
+                                  },
+    "Key":  {
+                "producto_id":  {
+                                    "S":  "419f0123-117a-4508-94a8-223c1b70d5cb"
+                                }
+            },
+    "ConditionExpression":  "attribute_not_exists(producto_id) OR codigo = :c"
+}

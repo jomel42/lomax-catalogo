@@ -1,0 +1,20 @@
+﻿{
+    "producto_id":  "1f6d3da0-24b3-42d6-ad96-2c8bc786f562",
+    "codigo":  "TEC-WEB-001",
+    "nombre":  "Teclado mecánico compacto",
+    "descripcion":  "Teclado mecánico compacto con conexión USB y distribución en español.",
+    "precio":  250,
+    "categoria_id":  1,
+    "fecha":  "2026-09-30T05:23:52.765Z",
+    "estado":  "PUBLICADO",
+    "atributos":  {
+                      "conexion":  "USB",
+                      "distribucion":  "ES",
+                      "tipo":  "Mecanico"
+                  },
+    "imagen_original_key":  "originales/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg",
+    "miniatura_key":  "miniaturas/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/229808f12fb63bfaeeef8a3cd38000a0f16b41c301df915c40a1bb67fc1825f3.png",
+    "estado_procesamiento":  "LISTA",
+    "error_procesamiento":  null,
+    "imagen_url":  "/productos/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/imagen"
+}

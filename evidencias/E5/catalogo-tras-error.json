@@ -1,0 +1,62 @@
+﻿[
+    {
+        "producto_id":  "fa1537b2-471d-4b3e-bfe2-4469b1d1a695",
+        "codigo":  "TEC-API-001",
+        "nombre":  "Teclado de prueba API",
+        "descripcion":  "Producto registrado mediante el backend para verificar E4.",
+        "precio":  150.5,
+        "categoria_id":  1,
+        "fecha":  "2026-09-30T04:44:52.454Z",
+        "estado":  "PUBLICADO",
+        "atributos":  {
+                          "distribucion":  "ES",
+                          "tipo":  "Mecanico",
+                          "conexion":  "USB"
+                      },
+        "imagen_original_key":  "originales/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg",
+        "miniatura_key":  "miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png",
+        "estado_procesamiento":  "LISTA",
+        "error_procesamiento":  null,
+        "imagen_url":  "/productos/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/imagen"
+    },
+    {
+        "producto_id":  "1f6d3da0-24b3-42d6-ad96-2c8bc786f562",
+        "codigo":  "TEC-WEB-001",
+        "nombre":  "Teclado mecánico compacto",
+        "descripcion":  "Teclado mecánico compacto con conexión USB y distribución en español.",
+        "precio":  250,
+        "categoria_id":  1,
+        "fecha":  "2026-09-30T05:23:52.765Z",
+        "estado":  "PUBLICADO",
+        "atributos":  {
+                          "conexion":  "USB",
+                          "distribucion":  "ES",
+                          "tipo":  "Mecanico"
+                      },
+        "imagen_original_key":  "originales/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg",
+        "miniatura_key":  "miniaturas/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/229808f12fb63bfaeeef8a3cd38000a0f16b41c301df915c40a1bb67fc1825f3.png",
+        "estado_procesamiento":  "LISTA",
+        "error_procesamiento":  null,
+        "imagen_url":  "/productos/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/imagen"
+    },
+    {
+        "producto_id":  "39ce31c0-8d82-4946-8c09-efd4d4e3027c",
+        "codigo":  "TEC003",
+        "nombre":  "Teclado inalambrico",
+        "descripcion":  "Teclado compacto con conexion inalambrica.",
+        "precio":  160,
+        "categoria_id":  1,
+        "fecha":  "2026-09-30T03:29:49.986Z",
+        "estado":  "PUBLICADO",
+        "atributos":  {
+                          "distribucion":  "ES",
+                          "tipo":  "Membrana",
+                          "conexion":  "Inalambrica 2.4 GHz"
+                      },
+        "imagen_original_key":  "originales/39ce31c0-8d82-4946-8c09-efd4d4e3027c/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg",
+        "miniatura_key":  "miniaturas/39ce31c0-8d82-4946-8c09-efd4d4e3027c/420dbef2be269b37612e538c99094f1f2aa4432eda7b145fd0020fc6f54dbb41.png",
+        "estado_procesamiento":  "LISTA",
+        "error_procesamiento":  null,
+        "imagen_url":  "/productos/39ce31c0-8d82-4946-8c09-efd4d4e3027c/imagen"
+    }
+]

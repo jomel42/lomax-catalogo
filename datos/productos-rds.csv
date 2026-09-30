@@ -1,0 +1,21 @@
+﻿producto_id,codigo,nombre,categoria_id
+c0785bf7-9f56-4cb0-a5d4-f0180a268af7,MON001,Monitor Full HD 24,2
+ff66a776-d2ed-4869-bd84-a597a6dd9469,MON002,Monitor Full HD 27,2
+3fce08ca-bf6d-41bf-8a3f-dea0ea040702,MON003,Monitor QHD 27,2
+0d01d411-6fb5-447c-a0c4-e5b29ae38153,MON004,Monitor 4K 32,2
+2775d369-a1f0-4ce3-9d66-1d9efddc3809,MON005,Monitor gamer 24,2
+419f0123-117a-4508-94a8-223c1b70d5cb,MON006,Monitor ultrawide 34,2
+3abb96e4-1e51-448a-adfa-edec35d3fd8d,MON007,Monitor portatil 15,2
+5ee024f8-440d-43de-8a74-e7143307633e,RAT001,Raton optico USB,3
+bc42da7f-94fd-4bb7-b240-8f2d7aac3623,RAT002,Raton inalambrico,3
+77842ea2-7585-473e-b467-7baee13563bf,RAT003,Raton gamer RGB,3
+5614a243-262d-444c-a069-0f6730960d69,RAT004,Raton ergonomico vertical,3
+063ea391-92dd-4baf-a188-a09be63fca12,RAT005,Raton Bluetooth,3
+d7cfe8c8-f248-448a-93c9-6209dc71ef8c,RAT006,Raton gamer ligero,3
+b2bf5297-b48d-4563-8808-998307041fdc,TEC001,Teclado mecanico RGB,1
+3ce2fdfd-8943-4b93-8434-dfd95dee0495,TEC002,Teclado de oficina,1
+39ce31c0-8d82-4946-8c09-efd4d4e3027c,TEC003,Teclado inalambrico,1
+9c3e011d-a4ce-4b93-9d03-ba48bfca9943,TEC004,Teclado compacto 60,1
+ec9e68a5-800e-4265-a826-79c4dcd9ce40,TEC005,Teclado ergonomico,1
+22fde524-cd4e-470d-a140-938950e302e6,TEC006,Teclado retroiluminado,1
+96031541-26f2-4670-81a0-849b554fc470,TEC007,Teclado Bluetooth,1

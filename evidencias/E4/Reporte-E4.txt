@@ -1,0 +1,476 @@
+﻿LOMAX - REPORTE E4
+Etapa 4: Backend con API y endpoints
+
+IMPLEMENTACION
+Backend: Node.js y Express.
+Imagen Docker: lomax-backend:1.0.
+URL local: http://localhost:3000
+Persistencia: RDS PostgreSQL y DynamoDB.
+Imagenes: S3 y procesamiento sincrono mediante Lambda.
+
+ENDPOINTS
+GET /categorias
+POST /productos
+POST /productos/{id}/imagen
+POST /productos/{id}/reprocesar
+GET /productos
+GET /productos/{id}
+GET /productos/{id}/imagen
+
+CONTRATO DE CARGA
+POST /productos recibe JSON:
+codigo, nombre, descripcion, precio, categoria_id y atributos.
+POST /productos/{id}/imagen recibe multipart/form-data,
+con un archivo en el campo imagen.
+Formatos permitidos: JPEG y PNG.
+Limite: 5000000 bytes.
+
+PUBLICACION
+El registro inicial queda PENDIENTE.
+La publicacion requiere atributos validos, ejecucion correcta
+de Lambda y verificacion de la miniatura recuperada de S3.
+El reprocesamiento utiliza el original guardado.
+
+ERRORES
+400: entrada invalida.
+404: producto o imagen no disponible.
+409: codigo duplicado, original ausente o conflicto de procesamiento.
+413: archivo superior al limite.
+415: formato no permitido.
+502/503: fallo de procesamiento o servicio dependiente.
+La respuesta incluye error, paso y, cuando corresponde, producto_id.
+
+PRUEBA CONTROLADA DE DEPENDENCIA
+Se utilizo un contenedor temporal configurado con una funcion
+Lambda inexistente. Se verifico la respuesta de error y la
+conservacion del producto pendiente.
+La recuperacion se realizo mediante el backend principal.
+El contenedor temporal fue eliminado.
+
+COMPARACION DE ARCHIVOS
+La imagen descargada desde la API se comparo mediante SHA256
+con el objeto descargado directamente de S3.
+
+ALCANCE
+Las imagenes utilizadas son archivos de prueba.
+La carga de fotografias definitivas y la publicacion de al menos
+20 productos forman parte de la continuacion del proyecto.
+
+EVIDENCIAS ORIGINALES
+
+========== get-categorias.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 118
+ETag: W/"76-EtBhuzxdkppH5RGwPWs8rf0q80Y"
+Date: Wed, 30 Sep 2026 04:43:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"categoria_id":1,"nombre":"Teclados"},{"categoria_id":2,"nombre":"Monitores"},{"categoria_id":3,"nombre":"Ratones"}]
+
+
+========== post-producto-cabeceras.txt ==========
+
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Content-Length: 98
+ETag: W/"62-OFTsTKe9LzPIuR468NxmeVYV25c"
+Date: Wed, 30 Sep 2026 04:44:52 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+
+
+========== post-producto-respuesta.json ==========
+
+{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","codigo":"TEC-API-001","estado":"PENDIENTE"}
+
+========== registro-api-rds.txt ==========
+
+             producto_id              |   codigo    |        nombre         | precio | categoria_id |  estado   
+--------------------------------------+-------------+-----------------------+--------+--------------+-----------
+ fa1537b2-471d-4b3e-bfe2-4469b1d1a695 | TEC-API-001 | Teclado de prueba API | 150.50 |            1 | PENDIENTE
+(1 row)
+
+
+
+========== registro-api-dynamodb.json ==========
+
+{
+    "Item": {
+        "producto_id": {
+            "S": "fa1537b2-471d-4b3e-bfe2-4469b1d1a695"
+        },
+        "codigo": {
+            "S": "TEC-API-001"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Mecanico"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}
+
+
+========== get-producto-pendiente.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 470
+ETag: W/"1d6-P2uTRtLdBv//fNwNtfU6j7vixWA"
+Date: Wed, 30 Sep 2026 04:45:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","codigo":"TEC-API-001","nombre":"Teclado de prueba API","descripcion":"Producto registrado mediante el backend para verificar E4.","precio":150.5,"categoria_id":1,"fecha":"2026-09-30T04:44:52.454Z","estado":"PENDIENTE","atributos":{"distribucion":"ES","tipo":"Mecanico","conexion":"USB"},"imagen_original_key":null,"miniatura_key":null,"estado_procesamiento":"PENDIENTE","error_procesamiento":null,"imagen_url":null}
+
+
+========== get-productos-inicial.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+ETag: W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+Date: Wed, 30 Sep 2026 04:43:52 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[]
+
+
+========== validaciones-registro.txt ==========
+
+codigo-duplicado: HTTP 409
+{"error":"El cÃ³digo del producto ya existe.","paso":"registrar_rds"}
+precio-negativo: HTTP 400
+{"error":"precio debe ser un nÃºmero no negativo con mÃ¡ximo dos decimales.","paso":"validar_registro"}
+categoria-inexistente: HTTP 400
+{"error":"La categorÃ­a no existe.","paso":"registrar_rds"}
+producto-inexistente: HTTP 404
+{"error":"Producto no encontrado.","paso":"consultar_producto","producto_id":"231dc20b-0e44-48c6-96b0-358304126093"}
+OK: las cuatro validaciones respondieron como se esperaba.
+
+
+========== rds-validaciones-registro.txt ==========
+
+ registros_invalidos 
+---------------------
+                   0
+(1 row)
+
+ registros_del_codigo 
+----------------------
+                    1
+(1 row)
+
+
+
+========== carga-imagen-cabeceras.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 350
+ETag: W/"15e-Ni5gQSKWFNy2sx56yQEgGb2MVA8"
+Date: Wed, 30 Sep 2026 04:53:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+
+
+========== carga-imagen-respuesta.json ==========
+
+{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","estado":"PUBLICADO","estado_procesamiento":"LISTA","miniatura_key":"miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png","imagen_url":"/productos/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/imagen","dimensiones":{"ancho":300,"alto":200}}
+
+========== producto-publicado-rds.txt ==========
+
+             producto_id              |   codigo    | precio | categoria_id |  estado   
+--------------------------------------+-------------+--------+--------------+-----------
+ fa1537b2-471d-4b3e-bfe2-4469b1d1a695 | TEC-API-001 | 150.50 |            1 | PUBLICADO
+(1 row)
+
+
+
+========== producto-publicado-dynamodb.json ==========
+
+{
+    "Item": {
+        "producto_id": {
+            "S": "fa1537b2-471d-4b3e-bfe2-4469b1d1a695"
+        },
+        "codigo": {
+            "S": "TEC-API-001"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Mecanico"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "S": "originales/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg"
+        },
+        "estado_procesamiento": {
+            "S": "LISTA"
+        },
+        "miniatura_key": {
+            "S": "miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png"
+        }
+    }
+}
+
+
+========== descarga-miniatura-s3.json ==========
+
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-09-30T04:53:20+00:00",
+    "ContentLength": 1555,
+    "ETag": "\"f385405011376f1c50b62828c4473910\"",
+    "ChecksumCRC32": "3XSZYA==",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "image/png",
+    "Metadata": {},
+    "StorageClass": "STANDARD"
+}
+
+
+========== get-imagen-cabeceras.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: image/png
+Cache-Control: no-store
+Content-Length: 1555
+ETag: W/"613-ieyb/Pv2SssaPMArwymDJVIa4Z0"
+Date: Wed, 30 Sep 2026 04:54:38 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+
+
+========== comparacion-imagen-api-s3.txt ==========
+
+SHA256 S3:  0EDD6B724DF669A64FA650D0B2B6CBBE5DB9D61FAB411112CA3807F66ECDC4ED
+SHA256 API: 0EDD6B724DF669A64FA650D0B2B6CBBE5DB9D61FAB411112CA3807F66ECDC4ED
+OK: archivos idénticos y Content-Type image/png.
+
+
+========== get-productos-publicados.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 748
+ETag: W/"2ec-GZnUIkGv0VmUbVf1ytzB5R8TJow"
+Date: Wed, 30 Sep 2026 04:55:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","codigo":"TEC-API-001","nombre":"Teclado de prueba API","descripcion":"Producto registrado mediante el backend para verificar E4.","precio":150.5,"categoria_id":1,"fecha":"2026-09-30T04:44:52.454Z","estado":"PUBLICADO","atributos":{"distribucion":"ES","tipo":"Mecanico","conexion":"USB"},"imagen_original_key":"originales/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg","miniatura_key":"miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png","estado_procesamiento":"LISTA","error_procesamiento":null,"imagen_url":"/productos/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/imagen"}]
+
+
+========== get-detalle-publicado.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 746
+ETag: W/"2ea-H47VQBDnYl7+gaAB7ucWWY5tBug"
+Date: Wed, 30 Sep 2026 04:55:02 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","codigo":"TEC-API-001","nombre":"Teclado de prueba API","descripcion":"Producto registrado mediante el backend para verificar E4.","precio":150.5,"categoria_id":1,"fecha":"2026-09-30T04:44:52.454Z","estado":"PUBLICADO","atributos":{"distribucion":"ES","tipo":"Mecanico","conexion":"USB"},"imagen_original_key":"originales/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg","miniatura_key":"miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png","estado_procesamiento":"LISTA","error_procesamiento":null,"imagen_url":"/productos/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/imagen"}
+
+
+========== verificacion-reprocesamiento.txt ==========
+
+originales: antes=1, después=1
+miniaturas: antes=1, después=1
+Estado: PUBLICADO
+Misma clave: miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png
+OK: reprocesamiento sin objetos adicionales.
+
+
+========== validaciones-imagen.txt ==========
+
+reprocesar-sin-original: HTTP 409
+{"error":"El producto no tiene una imagen original guardada.","paso":"buscar_original","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+imagen-no-disponible: HTTP 404
+{"error":"La miniatura no está disponible.","paso":"buscar_miniatura","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+imagen-supera-limite: HTTP 413
+{"error":"La imagen supera el límite de 5 MB.","paso":"recibir_imagen","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+formato-no-permitido: HTTP 415
+{"error":"Solo se admiten JPEG y PNG.","paso":"validar_formato","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+imagen-contenido-invalido: HTTP 400
+{"error":"El archivo no es una imagen válida.","paso":"validar_contenido","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+OK: las cinco pruebas respondieron con el código esperado.
+
+
+========== rds-errores-imagen.txt ==========
+
+             producto_id              | codigo |  estado   
+--------------------------------------+--------+-----------
+ 39ce31c0-8d82-4946-8c09-efd4d4e3027c | TEC003 | PENDIENTE
+(1 row)
+
+
+
+========== fallo-lambda-respuesta.json ==========
+
+{"error":"No se pudo completar la operación con el servicio.","paso":"invocar_lambda","producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c"}
+
+========== verificacion-fallo-lambda.txt ==========
+
+OK: HTTP 503 y paso fallido invocar_lambda.
+
+
+========== rds-fallo-lambda.txt ==========
+
+             producto_id              | codigo |  estado   
+--------------------------------------+--------+-----------
+ 39ce31c0-8d82-4946-8c09-efd4d4e3027c | TEC003 | PENDIENTE
+(1 row)
+
+
+
+========== dynamodb-fallo-lambda.json ==========
+
+{
+    "Item": {
+        "producto_id": {
+            "S": "39ce31c0-8d82-4946-8c09-efd4d4e3027c"
+        },
+        "codigo": {
+            "S": "TEC003"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana"
+                },
+                "conexion": {
+                    "S": "Inalambrica 2.4 GHz"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "S": "originales/39ce31c0-8d82-4946-8c09-efd4d4e3027c/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg"
+        },
+        "estado_procesamiento": {
+            "S": "ERROR"
+        },
+        "error_procesamiento": {
+            "S": "invocar_lambda: No se pudo completar la operaci¾n con el servicio."
+        }
+    }
+}
+
+
+========== recuperacion-respuesta.json ==========
+
+{"producto_id":"39ce31c0-8d82-4946-8c09-efd4d4e3027c","estado":"PUBLICADO","estado_procesamiento":"LISTA","miniatura_key":"miniaturas/39ce31c0-8d82-4946-8c09-efd4d4e3027c/420dbef2be269b37612e538c99094f1f2aa4432eda7b145fd0020fc6f54dbb41.png","imagen_url":"/productos/39ce31c0-8d82-4946-8c09-efd4d4e3027c/imagen","dimensiones":{"ancho":300,"alto":200}}
+
+========== rds-recuperacion.txt ==========
+
+             producto_id              | codigo |  estado   
+--------------------------------------+--------+-----------
+ 39ce31c0-8d82-4946-8c09-efd4d4e3027c | TEC003 | PUBLICADO
+(1 row)
+
+
+
+========== dynamodb-recuperacion.json ==========
+
+{
+    "Item": {
+        "producto_id": {
+            "S": "39ce31c0-8d82-4946-8c09-efd4d4e3027c"
+        },
+        "codigo": {
+            "S": "TEC003"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana"
+                },
+                "conexion": {
+                    "S": "Inalambrica 2.4 GHz"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "S": "originales/39ce31c0-8d82-4946-8c09-efd4d4e3027c/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg"
+        },
+        "estado_procesamiento": {
+            "S": "LISTA"
+        },
+        "miniatura_key": {
+            "S": "miniaturas/39ce31c0-8d82-4946-8c09-efd4d4e3027c/420dbef2be269b37612e538c99094f1f2aa4432eda7b145fd0020fc6f54dbb41.png"
+        }
+    }
+}
+
+
+========== contenedor-backend.txt ==========
+
+NAMES           IMAGE               STATUS          PORTS
+lomax-backend   lomax-backend:1.0   Up 10 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+
+
+========== docker-get-categorias.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 118
+ETag: W/"76-EtBhuzxdkppH5RGwPWs8rf0q80Y"
+Date: Wed, 30 Sep 2026 05:01:51 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"categoria_id":1,"nombre":"Teclados"},{"categoria_id":2,"nombre":"Monitores"},{"categoria_id":3,"nombre":"Ratones"}]
+
+
+========== docker-get-productos.txt ==========
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 748
+ETag: W/"2ec-GZnUIkGv0VmUbVf1ytzB5R8TJow"
+Date: Wed, 30 Sep 2026 05:01:53 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"producto_id":"fa1537b2-471d-4b3e-bfe2-4469b1d1a695","codigo":"TEC-API-001","nombre":"Teclado de prueba API","descripcion":"Producto registrado mediante el backend para verificar E4.","precio":150.5,"categoria_id":1,"fecha":"2026-09-30T04:44:52.454Z","estado":"PUBLICADO","atributos":{"distribucion":"ES","tipo":"Mecanico","conexion":"USB"},"imagen_original_key":"originales/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg","miniatura_key":"miniaturas/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/fd12d5d8488e51032b090f6f8c9c3fd7050e75e650edac0b84fcc22bfe8153fc.png","estado_procesamiento":"LISTA","error_procesamiento":null,"imagen_url":"/productos/fa1537b2-471d-4b3e-bfe2-4469b1d1a695/imagen"}]
+

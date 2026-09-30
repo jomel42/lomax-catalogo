@@ -1,0 +1,20 @@
+﻿{
+    "producto_id":  "f0c3f5bd-6a99-4795-bf97-f5a94ee48e45",
+    "codigo":  "TEC-WEB-INVALIDO",
+    "nombre":  "Prueba de código duplicado",
+    "descripcion":  "Prueba de validación del formulario.",
+    "precio":  100,
+    "categoria_id":  1,
+    "fecha":  "2026-09-30T05:32:47.476Z",
+    "estado":  "PENDIENTE",
+    "atributos":  {
+                      "conexion":  "USB",
+                      "distribucion":  "ES",
+                      "tipo":  "Mecanico"
+                  },
+    "imagen_original_key":  null,
+    "miniatura_key":  null,
+    "estado_procesamiento":  "ERROR",
+    "error_procesamiento":  "validar_contenido: El archivo no es una imagen válida.",
+    "imagen_url":  null
+}

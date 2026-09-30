@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "3fce08ca-bf6d-41bf-8a3f-dea0ea040702"
+        },
+        "codigo": {
+            "S": "MON003"
+        },
+        "atributos": {
+            "M": {
+                "frecuencia_hz": {
+                    "N": "144"
+                },
+                "resolucion": {
+                    "S": "2560x1440"
+                },
+                "pulgadas": {
+                    "N": "27"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

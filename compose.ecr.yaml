@@ -1,0 +1,8 @@
+﻿services:
+  frontend:
+    image: localhost:4566/000000000000/us-east-1/lomax-frontend:entrega-b6d8f2e
+    pull_policy: never
+
+  backend:
+    image: localhost:4566/000000000000/us-east-1/lomax-backend:entrega-b6d8f2e
+    pull_policy: never

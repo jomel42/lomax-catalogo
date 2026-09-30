@@ -1,4 +1,4 @@
-﻿node_modules/
+node_modules/
 .env
 .env.*
 !.env.example
@@ -7,7 +7,6 @@
 lambda/funcion.zip
 lambda/package/
 lambda/build/
-evidencias/
 descargas/
 
 kubeconfig*.yaml

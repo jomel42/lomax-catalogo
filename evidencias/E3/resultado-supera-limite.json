@@ -1,0 +1,1 @@
+{"ok": false, "producto_id": "3fce08ca-bf6d-41bf-8a3f-dea0ea040702", "estado": "ERROR", "paso": "descargar_original", "error": "ValueError: El archivo supera el limite de 5 MB (5000000 bytes)."}

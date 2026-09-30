@@ -1,0 +1,602 @@
+[
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "3"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "Bluetooth"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "1600"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT005"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "063ea391-92dd-4baf-a188-a09be63fca12"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "60"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "32"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "3840x2160"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON004"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "0d01d411-6fb5-447c-a0c4-e5b29ae38153"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Membrana retroiluminado"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC006"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "22fde524-cd4e-470d-a140-938950e302e6"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "165"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "24"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "1920x1080"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON005"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "2775d369-a1f0-4ce3-9d66-1d9efddc3809"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "Inalambrica 2.4 GHz"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Membrana"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC003"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "39ce31c0-8d82-4946-8c09-efd4d4e3027c"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "60"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "15.6"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "1920x1080"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON007"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "3abb96e4-1e51-448a-adfa-edec35d3fd8d"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Membrana"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC002"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "3ce2fdfd-8943-4b93-8434-dfd95dee0495"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "144"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "27"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "2560x1440"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON003"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "3fce08ca-bf6d-41bf-8a3f-dea0ea040702"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "144"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "34"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "3440x1440"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON006"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "419f0123-117a-4508-94a8-223c1b70d5cb"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "6"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "Inalambrica 2.4 GHz"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "2400"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT004"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "5614a243-262d-444c-a069-0f6730960d69"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "3"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "1200"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT001"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "5ee024f8-440d-43de-8a74-e7143307633e"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "6"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "12000"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT003"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "77842ea2-7585-473e-b467-7baee13563bf"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "Bluetooth"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Membrana"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC007"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "96031541-26f2-4670-81a0-849b554fc470"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "US"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Mecanico 60%"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC004"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "9c3e011d-a4ce-4b93-9d03-ba48bfca9943"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Mecanico"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC001"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "b2bf5297-b48d-4563-8808-998307041fdc"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "3"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "Inalambrica 2.4 GHz"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "1600"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT002"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "bc42da7f-94fd-4bb7-b240-8f2d7aac3623"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "75"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "24"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "1920x1080"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON001"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "c0785bf7-9f56-4cb0-a5d4-f0180a268af7"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "botones":  {
+                                                    "N":  "6"
+                                                },
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "dpi":  {
+                                                "N":  "16000"
+                                            }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "RAT006"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "d7cfe8c8-f248-448a-93c9-6209dc71ef8c"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "conexion":  {
+                                                     "S":  "USB"
+                                                 },
+                                    "distribucion":  {
+                                                         "S":  "ES"
+                                                     },
+                                    "tipo":  {
+                                                 "S":  "Ergonomico"
+                                             }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "TEC005"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "ec9e68a5-800e-4265-a826-79c4dcd9ce40"
+                        }
+    },
+    {
+        "atributos":  {
+                          "M":  {
+                                    "frecuencia_hz":  {
+                                                          "N":  "75"
+                                                      },
+                                    "pulgadas":  {
+                                                     "N":  "27"
+                                                 },
+                                    "resolucion":  {
+                                                       "S":  "1920x1080"
+                                                   }
+                                }
+                      },
+        "codigo":  {
+                       "S":  "MON002"
+                   },
+        "estado_procesamiento":  {
+                                     "S":  "PENDIENTE"
+                                 },
+        "imagen_original_key":  {
+                                    "NULL":  true
+                                },
+        "miniatura_key":  {
+                              "NULL":  true
+                          },
+        "producto_id":  {
+                            "S":  "ff66a776-d2ed-4869-bd84-a597a6dd9469"
+                        }
+    }
+]

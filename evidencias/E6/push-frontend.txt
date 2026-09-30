@@ -1,0 +1,45 @@
+The push refers to repository [localhost:4566/000000000000/us-east-1/lomax-frontend]
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+3d85d110b167: Waiting
+e2de96513ba9: Waiting
+22e5a8a110ec: Waiting
+e3320d02d578: Waiting
+e2de96513ba9: Mounted from 000000000000/us-east-1/citas-backend
+6b4dfb2e8f8a: Waiting
+6b4dfb2e8f8a: Waiting
+22e5a8a110ec: Pushed
+6b4dfb2e8f8a: Pushed
+b335b7ac3a40: Waiting
+63096177f206: Waiting
+e3320d02d578: Pushed
+3d85d110b167: Pushed
+703c5424632f: Waiting
+b27cf3f7c39d: Waiting
+8928ac1f8d5e: Waiting
+703c5424632f: Pushed
+8928ac1f8d5e: Pushed
+b335b7ac3a40: Pushed
+63096177f206: Pushed
+b27cf3f7c39d: Pushed
+entrega-b6d8f2e: digest: sha256:eb4c16da43e67d3bde1dbcfd499f079ec5d629c1015c0c268d28fb64c354ca79 size: 2187

@@ -1,0 +1,36 @@
+The push refers to repository [localhost:4566/000000000000/us-east-1/lomax-backend]
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+61592f5b6030: Waiting
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+61592f5b6030: Waiting
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+61592f5b6030: Waiting
+61592f5b6030: Waiting
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+61592f5b6030: Waiting
+8d9d84ee3188: Waiting
+8ab8fd6c9445: Waiting
+774043ccc8cc: Waiting
+61592f5b6030: Waiting
+8d9d84ee3188: Layer already exists
+dc40c63c08b5: Layer already exists
+c1b9b81ddb5b: Layer already exists
+c87a28c0d426: Waiting
+8ab8fd6c9445: Layer already exists
+774043ccc8cc: Layer already exists
+61592f5b6030: Layer already exists
+c34ee1968f92: Layer already exists
+a4f36fa1d860: Layer already exists
+c87a28c0d426: Pushed
+entrega-fed44f0: digest: sha256:1becee91d2366e8508e31ec958b7050b2c51849e3926ad24b273e617c62dbb23 size: 2003

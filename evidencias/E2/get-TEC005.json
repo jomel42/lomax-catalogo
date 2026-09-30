@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "ec9e68a5-800e-4265-a826-79c4dcd9ce40"
+        },
+        "codigo": {
+            "S": "TEC005"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Ergonomico"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

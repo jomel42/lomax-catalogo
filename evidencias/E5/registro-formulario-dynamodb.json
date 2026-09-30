@@ -1,0 +1,32 @@
+﻿{
+    "Item": {
+        "producto_id": {
+            "S": "1f6d3da0-24b3-42d6-ad96-2c8bc786f562"
+        },
+        "codigo": {
+            "S": "TEC-WEB-001"
+        },
+        "atributos": {
+            "M": {
+                "conexion": {
+                    "S": "USB"
+                },
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Mecanico"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "S": "originales/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/8386aa283173c80d0afa1ff2fe8f272537437013cfd8e1e2affd7ff508c06536.jpg"
+        },
+        "estado_procesamiento": {
+            "S": "LISTA"
+        },
+        "miniatura_key": {
+            "S": "miniaturas/1f6d3da0-24b3-42d6-ad96-2c8bc786f562/229808f12fb63bfaeeef8a3cd38000a0f16b41c301df915c40a1bb67fc1825f3.png"
+        }
+    }
+}

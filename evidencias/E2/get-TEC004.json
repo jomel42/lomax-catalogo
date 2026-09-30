@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "9c3e011d-a4ce-4b93-9d03-ba48bfca9943"
+        },
+        "codigo": {
+            "S": "TEC004"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "US"
+                },
+                "tipo": {
+                    "S": "Mecanico 60%"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

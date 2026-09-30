@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "bc42da7f-94fd-4bb7-b240-8f2d7aac3623"
+        },
+        "codigo": {
+            "S": "RAT002"
+        },
+        "atributos": {
+            "M": {
+                "dpi": {
+                    "N": "1600"
+                },
+                "conexion": {
+                    "S": "Inalambrica 2.4 GHz"
+                },
+                "botones": {
+                    "N": "3"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

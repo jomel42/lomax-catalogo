@@ -1,0 +1,57 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proxy
+  namespace: lomax
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lomax-proxy
+  template:
+    metadata:
+      labels:
+        app: lomax-proxy
+    spec:
+      containers:
+        - name: proxy
+          image: nginx:stable-alpine
+          ports:
+            - name: http
+              containerPort: 80
+          volumeMounts:
+            - name: configuracion
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+      volumes:
+        - name: configuracion
+          configMap:
+            name: proxy-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxy
+  namespace: lomax
+spec:
+  selector:
+    app: lomax-proxy
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  type: ClusterIP

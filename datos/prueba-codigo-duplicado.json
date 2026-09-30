@@ -1,0 +1,10 @@
+{
+    "descripcion":  "Registro que debe rechazarse.",
+    "nombre":  "Prueba de validacion",
+    "categoria_id":  1,
+    "atributos":  {
+                      "conexion":  "USB"
+                  },
+    "precio":  150.5,
+    "codigo":  "TEC-API-001"
+}

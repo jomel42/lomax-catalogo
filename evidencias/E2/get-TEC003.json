@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "39ce31c0-8d82-4946-8c09-efd4d4e3027c"
+        },
+        "codigo": {
+            "S": "TEC003"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana"
+                },
+                "conexion": {
+                    "S": "Inalambrica 2.4 GHz"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

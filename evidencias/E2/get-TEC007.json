@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "96031541-26f2-4670-81a0-849b554fc470"
+        },
+        "codigo": {
+            "S": "TEC007"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana"
+                },
+                "conexion": {
+                    "S": "Bluetooth"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

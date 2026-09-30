@@ -1,0 +1,21 @@
+producto_id,codigo,nombre,descripcion,precio,categoria_id,fecha_utc,estado
+063ea391-92dd-4baf-a188-a09be63fca12,RAT005,Raton Bluetooth,Raton Bluetooth para equipos portatiles.,120.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+0d01d411-6fb5-447c-a0c4-e5b29ae38153,MON004,Monitor 4K 32,Monitor de 32 pulgadas con resolucion 4K.,3200.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+22fde524-cd4e-470d-a140-938950e302e6,TEC006,Teclado retroiluminado,Teclado con iluminacion blanca.,180.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+2775d369-a1f0-4ce3-9d66-1d9efddc3809,MON005,Monitor gamer 24,Monitor de 24 pulgadas y alta frecuencia.,1450.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+39ce31c0-8d82-4946-8c09-efd4d4e3027c,TEC003,Teclado inalambrico,Teclado compacto con conexion inalambrica.,160.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+3abb96e4-1e51-448a-adfa-edec35d3fd8d,MON007,Monitor portatil 15,Monitor portatil de 15.6 pulgadas.,1100.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+3ce2fdfd-8943-4b93-8434-dfd95dee0495,TEC002,Teclado de oficina,Teclado de membrana para trabajo diario.,85.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+3fce08ca-bf6d-41bf-8a3f-dea0ea040702,MON003,Monitor QHD 27,Monitor de 27 pulgadas con resolucion QHD.,1800.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+419f0123-117a-4508-94a8-223c1b70d5cb,MON006,Monitor ultrawide 34,Monitor panoramico de 34 pulgadas.,3600.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+5614a243-262d-444c-a069-0f6730960d69,RAT004,Raton ergonomico vertical,Raton vertical para trabajo de oficina.,150.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+5ee024f8-440d-43de-8a74-e7143307633e,RAT001,Raton optico USB,Raton optico con conexion USB.,45.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+77842ea2-7585-473e-b467-7baee13563bf,RAT003,Raton gamer RGB,Raton gamer con sensibilidad ajustable.,180.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+96031541-26f2-4670-81a0-849b554fc470,TEC007,Teclado Bluetooth,Teclado Bluetooth para varios dispositivos.,210.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+9c3e011d-a4ce-4b93-9d03-ba48bfca9943,TEC004,Teclado compacto 60,Teclado mecanico de formato reducido.,290.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+b2bf5297-b48d-4563-8808-998307041fdc,TEC001,Teclado mecanico RGB,Teclado mecanico con iluminacion RGB.,350.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+bc42da7f-94fd-4bb7-b240-8f2d7aac3623,RAT002,Raton inalambrico,Raton con receptor USB inalambrico.,90.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+c0785bf7-9f56-4cb0-a5d4-f0180a268af7,MON001,Monitor Full HD 24,Monitor de 24 pulgadas para uso general.,950.00,2,2026-09-30 03:29:49.986835,PENDIENTE
+d7cfe8c8-f248-448a-93c9-6209dc71ef8c,RAT006,Raton gamer ligero,Raton ligero con sensor de alta precision.,250.00,3,2026-09-30 03:29:49.986835,PENDIENTE
+ec9e68a5-800e-4265-a826-79c4dcd9ce40,TEC005,Teclado ergonomico,Teclado con diseno ergonomico para oficina.,240.00,1,2026-09-30 03:29:49.986835,PENDIENTE
+ff66a776-d2ed-4869-bd84-a597a6dd9469,MON002,Monitor Full HD 27,Monitor de 27 pulgadas para oficina.,1250.00,2,2026-09-30 03:29:49.986835,PENDIENTE

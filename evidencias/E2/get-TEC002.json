@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "3ce2fdfd-8943-4b93-8434-dfd95dee0495"
+        },
+        "codigo": {
+            "S": "TEC002"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

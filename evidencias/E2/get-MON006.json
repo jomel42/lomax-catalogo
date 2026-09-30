@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "419f0123-117a-4508-94a8-223c1b70d5cb"
+        },
+        "codigo": {
+            "S": "MON006"
+        },
+        "atributos": {
+            "M": {
+                "frecuencia_hz": {
+                    "N": "144"
+                },
+                "resolucion": {
+                    "S": "3440x1440"
+                },
+                "pulgadas": {
+                    "N": "34"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

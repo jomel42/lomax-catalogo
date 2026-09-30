@@ -1,0 +1,49 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: lomax
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lomax-frontend
+  template:
+    metadata:
+      labels:
+        app: lomax-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: localhost:4566/000000000000/us-east-1/lomax-frontend:entrega-b6d8f2e@sha256:eb4c16da43e67d3bde1dbcfd499f079ec5d629c1015c0c268d28fb64c354ca79
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: lomax
+spec:
+  selector:
+    app: lomax-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  type: ClusterIP

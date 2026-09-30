@@ -1,0 +1,1 @@
+{"ok": false, "producto_id": "ff66a776-d2ed-4869-bd84-a597a6dd9469", "estado": "ERROR", "paso": "validar_y_generar", "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x76c7a7216ed0>"}

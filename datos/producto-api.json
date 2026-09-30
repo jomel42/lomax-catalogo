@@ -1,0 +1,12 @@
+{
+    "descripcion":  "Producto registrado mediante el backend para verificar E4.",
+    "nombre":  "Teclado de prueba API",
+    "categoria_id":  1,
+    "atributos":  {
+                      "distribucion":  "ES",
+                      "tipo":  "Mecanico",
+                      "conexion":  "USB"
+                  },
+    "precio":  150.5,
+    "codigo":  "TEC-API-001"
+}

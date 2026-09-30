@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "22fde524-cd4e-470d-a140-938950e302e6"
+        },
+        "codigo": {
+            "S": "TEC006"
+        },
+        "atributos": {
+            "M": {
+                "distribucion": {
+                    "S": "ES"
+                },
+                "tipo": {
+                    "S": "Membrana retroiluminado"
+                },
+                "conexion": {
+                    "S": "USB"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

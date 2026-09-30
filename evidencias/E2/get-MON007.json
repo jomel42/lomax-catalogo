@@ -1,0 +1,32 @@
+{
+    "Item": {
+        "producto_id": {
+            "S": "3abb96e4-1e51-448a-adfa-edec35d3fd8d"
+        },
+        "codigo": {
+            "S": "MON007"
+        },
+        "atributos": {
+            "M": {
+                "frecuencia_hz": {
+                    "N": "60"
+                },
+                "resolucion": {
+                    "S": "1920x1080"
+                },
+                "pulgadas": {
+                    "N": "15.6"
+                }
+            }
+        },
+        "imagen_original_key": {
+            "NULL": true
+        },
+        "miniatura_key": {
+            "NULL": true
+        },
+        "estado_procesamiento": {
+            "S": "PENDIENTE"
+        }
+    }
+}

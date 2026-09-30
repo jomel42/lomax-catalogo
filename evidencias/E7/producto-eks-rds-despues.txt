@@ -1,0 +1,5 @@
+﻿             producto_id              |   codigo    |            nombre            | precio | categoria_id |  estado   
+--------------------------------------+-------------+------------------------------+--------+--------------+-----------
+ e3b95f7c-037e-4bfc-8f62-df80c0909f3b | TEC-EKS-001 | Teclado registrado desde EKS | 275.00 |            1 | PUBLICADO
+(1 row)
+
