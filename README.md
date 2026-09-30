@@ -226,3 +226,10 @@ node_modules ni paquetes de construcción regenerables.
 
 El portafolio incluye configuraciones de ejemplo; los valores reales
 deben configurarse en el entorno local.
+
+## Organización del trabajo — P10
+
+Proyecto desarrollado individualmente por Jomel Dario Siñani Orellana
+(@jomel42).
+
+Consultar el [tablero por etapas, responsabilidades y aportes verificables](docs/organizacion-trabajo.md).
