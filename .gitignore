@@ -9,3 +9,5 @@ lambda/package/
 lambda/build/
 evidencias/
 descargas/
+
+kubeconfig*.yaml

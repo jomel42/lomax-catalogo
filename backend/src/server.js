@@ -6,6 +6,27 @@ import { apiBase, ErrorAPI } from "./api-base.js";
 const app = express();
 
 app.disable("x-powered-by");
+
+const nombreInstancia = process.env.HOSTNAME || "lomax-local";
+
+app.use((req, res, next) => {
+  const inicio = Date.now();
+
+  res.setHeader("X-Pod-Name", nombreInstancia);
+
+  res.on("finish", () => {
+    console.log(JSON.stringify({
+      evento: "solicitud_http",
+      pod: nombreInstancia,
+      metodo: req.method,
+      ruta: req.originalUrl,
+      estado: res.statusCode,
+      duracion_ms: Date.now() - inicio
+    }));
+  });
+
+  next();
+});
 app.use(express.json({ limit: "128kb" }));
 app.use(apiBase);
 app.use(apiImagenes);
