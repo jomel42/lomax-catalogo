@@ -56,7 +56,7 @@ La persistencia permanece fuera de los Pods de la aplicación.
 - FLOCI en ejecución con almacenamiento persistente.
 
 ## Recursos utilizados
-
+    
 | Recurso | Nombre |
 |---|---|
 | RDS | lomax-rds |
@@ -212,17 +212,30 @@ Producto de persistencia E7:
 ## Evidencias
 
 - E1: arquitectura y explicación de componentes.
+  <img width="1500" height="1193" alt="Arquitectura_Lomax - copia" src="https://github.com/user-attachments/assets/1a036a80-24c4-4e64-ace6-5b5c46e56953" />
+
 - E2: RDS, DynamoDB, restricciones y persistencia.
+  <img width="1458" height="185" alt="image" src="https://github.com/user-attachments/assets/add7ebec-7810-49aa-9536-6e7ba63b5b6a" />
+
 - E3: S3, Lambda, miniaturas, errores y reintentos.
+  <img width="1206" height="111" alt="image" src="https://github.com/user-attachments/assets/ee9a128e-b8af-470f-88ef-7a702b7818ed" />
+
 - E4: API, respuestas HTTP y pruebas.
+  <img width="1823" height="816" alt="Captura de pantalla 2026-09-30 023042" src="https://github.com/user-attachments/assets/25153d1b-ac5b-47b8-ba16-aa9729746a9c" />
+
 - E5: frontend, registro, catálogo y validaciones.
+  <img width="1037" height="777" alt="Captura de pantalla 2026-09-30 013313" src="https://github.com/user-attachments/assets/81a96184-97a4-413f-b160-9719bb6c7f98" />
+
 - E6: autenticación, push, pull y verificación de imágenes.
+  <img width="1232" height="165" alt="image" src="https://github.com/user-attachments/assets/d4358786-9ae5-4ad0-9d9a-b075455d6c4c" />
+
 - E7: Pods, imágenes ECR, escalamiento, recuperación y persistencia.
+<img width="1363" height="542" alt="image" src="https://github.com/user-attachments/assets/24a5e737-b9ab-42d2-ad9e-7948ce09aa51" />
 
-## Información excluida del repositorio
 
-No publicar archivos .env con credenciales, claves IAM, kubeconfig,
-node_modules ni paquetes de construcción regenerables.
+
+<img width="1732" height="960" alt="image" src="https://github.com/user-attachments/assets/08892db7-3369-4da2-96b0-a65ea90fc55e" />
+
 
 El portafolio incluye configuraciones de ejemplo; los valores reales
 deben configurarse en el entorno local.
